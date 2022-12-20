@@ -12,9 +12,17 @@ public class Main {
       msmSiExisteOno("MONTES DE CARLO");
       crearHotel();
       eliminarHotel();
+      veureHotel();
       System.out.println(arrayListHotels.toString());
-
     }
+
+    public static void veureHotel(){
+        String nomHotel= askParametroReturnString("Escriure nom d'Hotel para revisar sus datos: ");
+        msmSiExisteOno(nomHotel);
+        if (existeHotel(nomHotel) !=-1 ){
+            System.out.println(arrayListHotels.get(existeHotel(nomHotel)).toString());  
+        };
+    } 
 
     public static void crearHotel(){
         String nomHotel= askParametroReturnString("Escriure nom d'Hotel para crear: ");
@@ -25,7 +33,6 @@ public class Main {
             int superfícieTotalHotel= askParametroReturnInteger("Introduex superficie total d'Hotel: ");
             Hotel nuevoHotel = new Hotel(nomHotel, nombreHabitacions,nombrePlantes, superfícieTotalHotel);
             arrayListHotels.add(nuevoHotel);  
-
         }
     } 
 
@@ -56,9 +63,7 @@ public class Main {
             index++;	
         }
         return indexBuscar;        
-    }
-
-    
+    } 
 
     public static String askParametroReturnString(String notas) {
 		System.out.print(notas);		
