@@ -56,7 +56,7 @@ public class Hotel {
         return " nom d'Hotel: "+ nom +" \n "+
                 " nombre d'habitacions: " + nombreHabitacions +" \n "+
                 " nombre d'Plantes: " + nombrePlantes + " \n " + 
-                " nombre superfícieTotalHotel: " + nombrePlantes;
+                " nombre superfícieTotalHotel: " + nombrePlantes +"\n";
     }
 
 }

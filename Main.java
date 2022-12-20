@@ -8,20 +8,33 @@ public class Main {
     public static void main(String[] args) {
       Hotel hotel1= new Hotel("MONTES DE CARLO", 60, 6, 40000);
       arrayListHotels.add(hotel1);
-      System.out.println(arrayListHotels.toString());
+      
       msmSiExisteOno("MONTES DE CARLO");
       crearHotel();
+      eliminarHotel();
+      System.out.println(arrayListHotels.toString());
+
     }
 
     public static void crearHotel(){
-        String nomHotel= askParametroReturnString("Escriure nom d'Hotel: ");
+        String nomHotel= askParametroReturnString("Escriure nom d'Hotel para crear: ");
         msmSiExisteOno(nomHotel);
         if (existeHotel(nomHotel)==-1){
             int nombreHabitacions= askParametroReturnInteger("Introduex nombre de Habitacions: ");
             int nombrePlantes= askParametroReturnInteger("Introduex nombre de Plantes: ");
             int superfícieTotalHotel= askParametroReturnInteger("Introduex superficie total d'Hotel: ");
             Hotel nuevoHotel = new Hotel(nomHotel, nombreHabitacions,nombrePlantes, superfícieTotalHotel);
-            arrayListHotels.add(nuevoHotel);      
+            arrayListHotels.add(nuevoHotel);  
+
+        }
+    } 
+
+    public static void eliminarHotel(){
+        String nomHotel= askParametroReturnString("Escriure nom d'Hotel a eliminar: ");
+        msmSiExisteOno(nomHotel);
+        if (existeHotel(nomHotel) !=-1){
+            System.out.println("Se eliminará del la base de datos");
+            arrayListHotels.remove(existeHotel(nomHotel));      
         }
     } 
 
@@ -44,6 +57,8 @@ public class Main {
         }
         return indexBuscar;        
     }
+
+    
 
     public static String askParametroReturnString(String notas) {
 		System.out.print(notas);		
