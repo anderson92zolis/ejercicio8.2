@@ -52,4 +52,11 @@ public class Hotel {
         System.out.println("el cost total destinat al servei: "+ (double) nombreHabitacions/20 *(1500) +" €/mes");
     }
 
+    public String toString(){
+        return " nom d'Hotel: "+ nom +" \n "+
+                " nombre d'habitacions: " + nombreHabitacions +" \n "+
+                " nombre d'Plantes: " + nombrePlantes + " \n " + 
+                " nombre superfícieTotalHotel: " + nombrePlantes;
+    }
+
 }
